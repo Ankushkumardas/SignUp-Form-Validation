@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <style>
+      body {
+        /* font-style: sans-serif;
+             */
+        font-family: sans-serif;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+        gap: 5px;
+        border: 1px solid white;
+        width: 280px;
+        padding: 10px;
+        border-radius: 10px;
+        margin: 100px 40% 0;
+        background-color: rgb(255, 255, 255);
+        color: black;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+      p {
+        font-size: small;
+        font-weight: 600;
+        color: red;
+        margin: 0;
+      }
+      button {
+        margin-bottom: 10px;
+        background-color: blue;
+        color: white;
+        border: none;
+        outline: none;
+        padding: 7px 10px 7px;
+        margin-top: 5px;
+        border-radius: 5px;
+        font-weight: 600;
+      }
+      h4 {
+        font-weight: 200;
+        font-size: small;
+      }
+      input {
+        padding: 7px 10px 4px;
+        border-radius: 4px;
+        border: none;
+        /* gap: 2px; */
+        margin: 2px;
+        font-size: medium;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+          rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        margin-bottom: 5px;
+      }
+      h3 {
+        font-size: 24px;
+        margin-bottom: 5px;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+    </style> -->
+    <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.form:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+h3 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+input[type="text"], input[type="password"] {
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+  border-color: #007BFF;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+}
+
+input[type="text"]:hover, input[type="password"]:hover {
+  border-color: #0056b3;
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007BFF;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+.toggle {
+  background-color: #f8f9fa;
+  color: #007BFF;
+}
+
+.toggle:hover {
+  background-color: #e2e6ea;
+  color: #0056b3;
+}
+
+p {
+  font-size: 12px;
+  color: red;
+  margin-top: 5px;
+  height: 12px;
+  transition: color 0.4s ease;
+}
+
+
+@keyframes input-focus {
+  0% {
+    border-color: #ccc;
+  }
+  100% {
+    border-color: #007BFF;
+  }
+}
+
+    </style>
+  </head>
+  <body class="container">
+    <form class="form">
+      <h3>SignUp</h3>
+      <div style="display: flex; flex-direction: column" class="user-cont">
+        <label for="username" class="username-cont">Username:</label>
+        <input
+          type="text"
+          name="username"
+          id="username"
+          style="width: 200px"
+          placeholder="Username"
+          class="username"
+        />
+        <p class="p-1"></p>
+      </div>
+      <div style="display: flex; flex-direction: column" class="email-cont">
+        <label for="email">Email:</label>
+        <input
+          type="text"
+          name="email"
+          id="email"
+          style="width: 200px"
+          placeholder="Email"
+          class="emaili"
+        />
+        <p class="p-2"></p>
+      </div>
+      <div style="display: flex; flex-direction: column" class="pass-cont">
+        <label for="password">Password:</label>
+        <div style="display: flex; align-items: center; gap: 2px">
+          <input
+            type="password"
+            name="password"
+            id="password"
+            style="width: 200px"
+            placeholder="password"
+            class="password"
+          />
+        </div>
+
+        <p class="p-3"></p>
+      </div>
+      <div style="display: flex; flex-direction: column" class="confpass-cont">
+        <label for="confirm-password">Confirm Password:</label>
+        <input
+          type="password"
+          name="confirm-password"
+          id="confirm-password"
+          style="width: 200px"
+          placeholder="confirm password"
+          class="confirmpass"
+        />
+        <p class="p-4"></p>
+      </div>
+      <div
+        style="
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          justify-content: center;
+        "
+      >
+        <button class="toggle">Show Password</button>
+        <button type="submit" style="width: full">Submit</button>
+      </div>
+    </form>
+  </body>
+  <script>
+    const form = document.querySelector(".form");
+    // const username=document.querySelector('#username')
+    // const email=document.querySelector('#email')
+    // const password=document.querySelector('#password')
+
+    // const confirmpassword=document.querySelector
+    const usercont = document.querySelector(".user-cont");
+    const userinput = document.querySelector(".username");
+    const userp1 = document.querySelector(".p-1");
+
+    const emailcont = document.querySelector(".email-cont");
+    const emailinput = document.querySelector(".emaili");
+    const emailp2 = document.querySelector(".p-2");
+
+    const passcont = document.querySelector(".pass-cont");
+    const passinput = document.querySelector(".password");
+    const userp3 = document.querySelector(".p-3");
+
+    const confpasscont = document.querySelector(".confpass-cont");
+    const confpassinput = document.querySelector(".confirmpass");
+    const userp4 = document.querySelector(".p-4");
+
+    const togglebtn = document.querySelector(".toggle");
+
+    function isValidateuser(data) {
+      if (
+        userinput.value.length === 0 ||
+        userinput.value.toLowerCase() === "username"
+      ) {
+        userp1.innerText = "username is error";
+      } else if (userinput.value.length <= 6 || userinput.value.length >= 20) {
+        userp1.innerText = "username is small or too large";
+      } else {
+        return true;
+      }
+      return false;
+    }
+
+    function isValidateEmail(data) {
+      if (emailinput.value.length === 0 || !emailinput.value.includes("@")) {
+        emailp2.innerText = "email is missing @";
+      } else return true;
+
+      // console.log("email :",value,false)
+
+      return false;
+    }
+
+    function isValidatePassword(data) {
+      if (passinput.value.length === 0 || passinput.value.length < 8) {
+        userp3.innerText = "password is small";
+      } else return true;
+
+      return false;
+    }
+
+    function isvalidateconfirmpass(data) {
+      var password = passinput.value;
+      var confirmPassword = confpassinput.value;
+
+      if (password !== confirmPassword) {
+        userp4.innerText = "Passwords do not match!";
+        // return false;
+      } else if (confirmPassword.length === 0) {
+        userp4.innerText = "Passwords length is small!";
+      } else {
+        return true;
+      }
+      return false;
+    }
+
+    function handlesubmit(e) {
+      e.preventDefault();
+
+      const validateusername = isValidateuser(userinput.value);
+      const validatepass = isValidatePassword(passinput.value);
+      const validateemail = isValidateEmail(emailinput.value);
+      const validateconfirmpass = isvalidateconfirmpass(confpassinput.value);
+
+      if (
+        validateusername &&
+        validatepass &&
+        validateemail &&
+        validateconfirmpass
+      ) {
+        console.log("form submited");
+        console.log(
+          "Username:",
+          userinput.value,
+          "\nEmail:",
+          emailinput.value,
+          "\nPassword:",
+          passinput.value,
+          "\nConfirmPassword:",
+          confpassinput.value
+        );
+      } else {
+        console.log("form datas are not filled properly");
+      }
+    }
+
+    togglebtn.addEventListener("click", () => {
+      var password = passinput;
+      var confirmPassword = confpassinput;
+      if (password.type === "password") {
+        password.type = "text";
+        confirmPassword.type = "text";
+        toggbtn.innerText = "Hide Text";
+      } else {
+        password.type = "password";
+        confirmPassword.type = "password";
+        toggbtn.innerText = "Show Text";
+      }
+    });
+
+    form.addEventListener("submit", handlesubmit);
+    
+  </script>
+</html>
